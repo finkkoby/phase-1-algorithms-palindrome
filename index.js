@@ -1,9 +1,23 @@
 function isPalindrome(word) {
-  // Write your algorithm here
+  let answer;
+  for (let i = 0; i < (word.length / 2); i++) {
+    if (word[i] === word[word.length - (i + 1)]) {
+      answer = true;
+    } else {
+      answer = false;
+      break;
+    }
+  }
+  return answer;
 }
 
 /* 
   Add your pseudocode here
+  for (i <= string.length / 2)
+    if string[i] === string[-(i + 1)]
+    else {
+      return false;
+    }
 */
 
 /*
@@ -16,7 +30,8 @@ if (require.main === module) {
   console.log("Expecting: true");
   console.log("=>", isPalindrome("racecar"));
 
-  console.log("");
+  console.log("Expecting: false");
+  console.log("=>", isPalindrome("oratorio"))
 
   console.log("Expecting: false");
   console.log("=>", isPalindrome("robot"));
